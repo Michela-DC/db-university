@@ -13,15 +13,10 @@ SELECT `exam_id`, AVG(`vote`) AS `average_vote` FROM `exam_student` GROUP BY (`e
 SELECT `department_id`, COUNT(`id`) as `available_degrees` FROM `degrees` GROUP BY (`department_id`);
 
 
-<<<<<<< HEAD
 JOIN -------------
 
 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia:
 SELECT * FROM `students` INNER JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
-=======
-JOIN ------------
 
-1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia:
-SELECT * FROM `degrees` INNER JOIN `students` ON `students`.`degree_id` = `degrees`.`id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
-
->>>>>>> 8fb1abfbce81cd8a4d562c88b9f6348d2e7eedf1
+2. Selezionare tutti i Corsi di Laurea del Dipartimento di Neuroscienze:
+SELECT * FROM `degrees` INNER JOIN `departments` ON `degrees`.`department_id` = `departments`.`id` WHERE `departments`.`name` = 'Dipartimento di Neuroscienze';
