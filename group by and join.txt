@@ -1,7 +1,7 @@
 GROUP BY --------
 
 1. Contare quanti iscritti ci sono stati ogni anno:
-SELECT YEAR(`enrolment_date`), COUNT(`enrolment_date`) AS `enrolled_same_year` FROM `students` GROUP BY YEAR(`enrolment_date`);
+SELECT YEAR(`enrolment_date`), COUNT(`id`) AS `enrolled_same_year` FROM `students` GROUP BY YEAR(`enrolment_date`);
 
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio:
 SELECT `office_address`, COUNT(`id`) AS `same_address` FROM `teachers` GROUP BY `office_address`;
@@ -13,7 +13,15 @@ SELECT `exam_id`, AVG(`vote`) AS `average_vote` FROM `exam_student` GROUP BY (`e
 SELECT `department_id`, COUNT(`id`) as `available_degrees` FROM `degrees` GROUP BY (`department_id`);
 
 
+<<<<<<< HEAD
 JOIN -------------
 
 1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia:
 SELECT * FROM `students` INNER JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
+=======
+JOIN ------------
+
+1. Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia:
+SELECT * FROM `degrees` INNER JOIN `students` ON `students`.`degree_id` = `degrees`.`id` WHERE `degrees`.`name` = 'Corso di Laurea in Economia';
+
+>>>>>>> 8fb1abfbce81cd8a4d562c88b9f6348d2e7eedf1
